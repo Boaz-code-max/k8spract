@@ -1,0 +1,23 @@
+---
+apiVersion: batch
+kind: CronJob
+metadata: 
+  name: livealerts
+spec: 
+  schedule: '* * * * * '
+  jobTemplate:
+    metadata:
+      name: livejob
+    spec: 
+      backoffLimit: 3
+      template: 
+        metadata:
+          name: cronpod
+        spec: 
+          restartPolicy: OnFailure
+          containers:
+            - name: alpine 
+              image: alpine 
+              args: 
+                - sleep 
+                - 5s  
