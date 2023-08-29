@@ -2,12 +2,13 @@
 apiVersion: v1 
 kind: Pod 
 metadata: 
-  name: alpine-pod
+  name: nginx-pod
 spec: 
   containers:
-    - name: alpine-pod 
-      image: alpine:latest
+    - name: nginx
+      image: nginx
       ports:
-        - args:
-        - sleep
-        - 3s 
+        - containerPort: 80
+        
+        
+         
