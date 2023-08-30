@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: setbased-rs
+  labels: 
+    purpose: understand setbased 
+    concept: setbased 
+spec:
+  minReadySeconds: 2
+  replicas: 5
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values: 
+          - nginx 
+          - web 
+      - key: env 
+        operator: NotIn 
+        values: 
+          - prod 
+          - uat 
+      - key: failing
+        operator: DoesNotExist
+        values: 
+  template: 
+    metadata:
+      name: 
+      labels: 
+        app: nginx 
+        env: dev
+    spec: 
+      containers: 
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+
+          
