@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1	
+kind: ReplicaSet
+metadata: 
+  name: rsnew
+spec: 
+  minReadySeconds: 2
+  replicas: 5
+  selector: 
+    matchLabels:
+      app: httpd
+  template: 
+    metadata:
+      name: jenkins-alpine
+      labels:
+        app: httpd
+    spec:
+      containers: 
+        - name: jenkins
+          image: jenkins/jenkins
+          ports: 
+            - containerPort: 8080
+        - name: alpine 
+          image: alpine 
+          args: 
+            - sleep 
+            - 5s
