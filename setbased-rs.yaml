@@ -4,7 +4,7 @@ kind: ReplicaSet
 metadata: 
   name: setbased-rs
   labels: 
-    purpose: understand setbased 
+    purpose: understand 
     concept: setbased 
 spec:
   minReadySeconds: 2
