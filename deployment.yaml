@@ -3,6 +3,8 @@ apiVersion: apps/v1
 kind: Deployment 
 metadata: 
   name: deploy-nginx 
+  Annotations:
+    kubernetes.io/change-cause: "updated to httpd"
   labels:
     app: deploy-nginx 
 spec: 
@@ -24,7 +26,7 @@ spec:
     spec: 
       containers: 
         - name: nginx 
-          image: nginx 
+          image: httpd
           ports:
             - containerPort: 80
        
