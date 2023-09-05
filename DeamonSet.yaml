@@ -1,23 +1,24 @@
 ---
 apiVersion: apps/v1 
-kind: DaemonSet 
-metadata: 
-  name: demo-set
-  annotations:
-    kubernetes.io/change-cause: "updated to fluentd"
+kind: DaemonSet
+metadata:
+  name: deamon-set
   labels: 
     app: fluentd
-spec:
-  minReadySeconds: 2
-  selector:
-    matchLabels:
+spec:  
+  minReadySeconds: 1
+  selector: 
+    matchLabels: 
       app: fluentd
-  template:
-    metadata:
+  template: 
+    metadata: 
       name: fluentd
-      labels: 
-        app: fluentd 
-  spec: 
-    containers:
-      - name: fluentd
-        iamge: fluentd
+      labels:
+        app: fluentd
+    spec: 
+      containers: 
+        - name: fluentd
+          image: fluentd:v1.16-debian-1
+
+
+        
