@@ -1,7 +1,7 @@
 ---
 apiVersion: apps/v1
 kind: ReplicaSet
-metadata: 
+metadata:
   name: svc-rc1
   labels: 
     app: nginx 
@@ -11,7 +11,7 @@ spec:
   replicas: 2
   selector: 
     matchLabels: 
-    app: nginx 
+      app: nginx 
   template:
     metadata:
       name: nginx 
