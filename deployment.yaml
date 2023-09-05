@@ -9,8 +9,8 @@ spec:
   minReadySeconds: 5
   replicas: 3 
   selector: 
-    app: nginx 
-    ver: "1.23" 
+    matchLabels: 
+      app: nginx 
   strategy: 
     type: rollingUpdate
     rollingUpdate: 
@@ -20,8 +20,7 @@ spec:
     metadata: 
       name: nginx 
       labels: 
-        app: nginx 
-        ver: "1.23" 
+        app: nginx  
     spec: 
       containers: 
         - name: nginx 
