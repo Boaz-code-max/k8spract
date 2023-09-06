@@ -11,4 +11,4 @@ spec:
   selector: 
     app: nginx 
   type: ClusterIP
-  clusterIP: none 
+  clusterIP: None 

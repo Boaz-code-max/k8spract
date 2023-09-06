@@ -1,0 +1,10 @@
+---
+apiVersion: v1 
+kind: ConfigMap 
+metadata: 
+  name: mysql-config
+data: 
+  MYSQL_USER: boazdevops
+  MYSQL_PASSWORD: honey
+  MYSQL_DATABASE: db 
+  MYSQL_ROOT_PASSWORD: honey
